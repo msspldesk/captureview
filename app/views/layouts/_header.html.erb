@@ -35,7 +35,11 @@
           </li>
         <% end %>
         
-        <%= render 'layouts/boards_nav_section', boards: @boards unless @boards.nil? %>
+        <% if (user_signed_in?) then %>
+          <div id="boards_nav_section">
+            <%= render 'layouts/boards_nav_section', boards: @boards unless @boards.nil? %>
+          </div>
+        <% end %>
       </ul>
 
       <ul class="profileNav">
